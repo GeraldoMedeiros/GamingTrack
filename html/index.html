@@ -2,14 +2,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaming Track</title>
-    {% load static %}
+    <title>GamingTrack</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
-    <!--Barra de Navegação-->
     <nav class="navbar navbar-expand-lg navbar-dark purple">
         <a class="navbar-brand" href="#">
             <i class="fas fa-gamepad"></i>
@@ -36,21 +34,20 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                            <form method="post" action="/GamingTrack/" class="login">
-                                {% csrf_token %}
+                            <form action="" class="login">
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="login">Nome de Usuário</label>
-                                        {{form.login}}
+                                        <input type="text" class="form-control" id="login" aria-describedby="loginHelp" placeholder="Insira seu nome de usuário">
                                       </div>
                                       <div class="form-group">
                                         <label for="senha">Senha</label>
-                                        {{form.password}}
+                                        <input type="password" class="form-control" id="senha" placeholder="Insira sua senha">
                                       </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                                    <button type="submit" name="save" class="btn btn-success">Entrar</button>
+                                    <button type="submit" class="btn btn-success">Entrar</button>
                                 </div>
                             </form>
                     </div>
@@ -59,7 +56,7 @@
           </ul>
         </div>
     </nav>
-
+    
     <div class="homepage">
         <div class="text-wrapper">
             <h6 class="top-line">BETA</h6>
@@ -69,7 +66,7 @@
             <p class="subtitle">
                 Acompanhe seu progresso e interaja com outros jogadores nessa rede social gratuita para Gamers. 
             </p>
-            <button class="bttn btn--wide blue" onclick="location.href = '/GamingTrack/register'">
+            <button class="bttn btn--wide blue">
                 CRIE SUA CONTA
             </button>
         </div>

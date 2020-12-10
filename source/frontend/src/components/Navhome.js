@@ -5,7 +5,6 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import { FaGamepad } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 import './Navhome.css'
 
 function Navhome() {
@@ -40,7 +39,7 @@ function Navhome() {
                             <Form.Label>Senha</Form.Label>
                             <Form.Control type="password" placeholder="Insira sua Senha" />
                         </Form.Group>
-                        <Button size="lg" block variant="primary" type="submit">
+                        <Button size="lg" block variant="primary" type="submit" data-toggle="modal" data-target="#modalLogin">
                             Entrar
                         </Button>
                     </Form>

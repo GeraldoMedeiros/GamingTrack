@@ -14,6 +14,7 @@ urlpatterns = [
     path('postagem/<int:pk>/', views.PostagemAPIView.as_view(), name='postagem'),
     path('like/<int:pk>/', views.LikePostagemAPIView.as_view(), name='like'),
     path('review/<int:pk>/', views.ReviewAPIView.as_view(), name='review'),
+    path('usuario/create/', views.UsersAPIViewCreate.as_view(), name='criar'),
 
     #Pure Django Framework
     path('register/', views_user.RegisterUser),
@@ -41,5 +42,4 @@ urlpatterns = [
 
     path('adicionandoAmigo/', views_user.adicionar_amigo),
     path('verPedidosdeAmizade/', views_user.ver_pedidos_de_amizade),
-
 ]

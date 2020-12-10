@@ -7,9 +7,9 @@ import './Homepage.css'
 import Navhome from '../Navhome';
 import { FaGamepad } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { getCookie } from '../API/CorsHeaders.js'
 
 function Homepage() {
-
     
     return (
         <>

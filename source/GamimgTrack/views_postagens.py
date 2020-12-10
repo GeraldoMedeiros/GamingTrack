@@ -8,20 +8,19 @@ from .views_comentarios import pegar_comentarios_Postagens
 MensagemErro = "Algo de errado não está certo"
 criar_postagem = "posts/criar_post.html"
 IrParaListarPostagens = "posts/lista_postagens.html"
-ver_postagem = "posts/ver_postagem.html"
+ver_postagem = "inicio.html"
 IrParaInfo = "user/info.html"
 
 
 def criar_nova_postagem(response):
     logado = User.objects.get(id=response.session['id_user'])
     if response.method == "POST":
-        form = CriarPostagemForm(response.POST)
-        if form.is_valid():
-            post = Postagem.objects.create(title=form.cleaned_data['title'], content=form.cleaned_data['content'],
-                                           user_criador=logado)
-            post.save()
-            return render(response, ver_postagem, {"user": logado, "post": post, "criador": post.user_criador, "lista_comentarios":None})
-        return JsonResponse(data={"message": MensagemErro})
+        title = response.POST.get("title")
+        content = response.POST.get("content")
+        post = Postagem.objects.create(title=title, content=content,
+                                       user_criador=logado)
+        post.save()
+        return render(response, ver_postagem, {"user": logado, "post": post, "criador": post.user_criador, "lista_comentarios":None, "lista_de_postagens":pegar_lista_de_postagens()})
     else:
         form = CriarPostagemForm()
         return render(response, criar_postagem, {"form": form})
@@ -102,3 +101,11 @@ def mostrar_posts_visita(response):
         lista.append(sla)
     return render(response, IrParaListarPostagens, {'lista': lista})
 
+def pegar_lista_de_postagens():
+    lista = []
+    for posts in Postagem.objects.all():
+        sla = []
+        sla.append(posts.title)
+        sla.append(posts.id)
+        lista.append(sla)
+    return lista

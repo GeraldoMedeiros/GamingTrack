@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.purple {
+    background-color: #0A125C;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.text-wrapper {
+    text-align: center;
+    padding: 250px 400px 292px 400px;
+    color: #fff;
+}
+
+.top-line {
+    color: #f00946;
+    font-size: 24px;
+    line-height: 16px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.head-line {
+    font-size: 76px;
+    line-height: 1.1;
+    font-weight: 600;
+    color: #f7f8fa;
+    margin-bottom: 35px;
+}
+
+.dark {
+    color: #1c2237;
+}
+
+.darkBg {
+    background-color: #1c2237;
+}
+
+.subtitle {
+    margin-bottom: 28px;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.img-wrapper {
+    max-width: 555px;
+}
+
+.img {
+    max-width: 95%;
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 10px;
+    padding-right: 0;
+}
+
+.fa-gamepad {
+    border: 0;
+    max-width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.bttn {
+    padding: 8px 20px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.btn--wide {
+    padding: 12px 64px;
+    font-size: 20px;
+}
+
+.blue {
+    background-color: #276afb;
+    color: #fff;
+    border: none;
+}
+
+.btn--wide:hover {
+    background-color: #f00946;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.purple {
+    background-color: #0A125C;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.nav--search {
+    align-content: center;
+}
+
+.homepage {
+    background-image: url(img/home-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
+}
+

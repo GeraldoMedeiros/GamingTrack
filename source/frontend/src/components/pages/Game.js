@@ -4,16 +4,15 @@ import Col from 'react-bootstrap/esm/Col'
 import Container from 'react-bootstrap/esm/Container'
 import Row from 'react-bootstrap/esm/Row'
 import './Game.css'
-import Navhome from '../Navhome'
+import Navuser from '../Navuser'
 import Media from 'react-bootstrap/Media'
 import Form from 'react-bootstrap/Form'
-import Rater from 'react-rater'
 import 'react-rater/lib/react-rater.css'
 
 function Game() {
     return (
         <>
-            <Navhome />
+            <Navuser />
             <Container fluid="true">
                 <Row className="game-header">
                     <Col>

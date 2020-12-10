@@ -1,4 +1,104 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Track - Cadastro</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/feed.css' %}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
 <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark purple justify-content-between">
+        <a class="navbar-brand" href="/GamingTrack/">
+            <i class="fas fa-gamepad"></i>
+            GamingTrack
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <form class="form-inline my-2 my-lg-0 search">
+                <input class="form-control mr-sm-2" type="search" placeholder="Pesquise jogos, usuários..." aria-label="Search">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+
+          <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item">
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-users"></i> 
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">Em breve</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Minha conta
+                    </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="/GamingTrack/info">Meu perfil</a>
+                    <a class="dropdown-item" href="/GamingTrack/alterar">Alterar dados</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/GamingTrack/">Sair</a>
+                </div>
+            </div>
+            </li>
+            
+          </ul>
+        </div>
+    </nav>
+
+    &nbsp;
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        Criar Postagem
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" action="/GamingTrack/criarNovaPostagem/">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <input class="form-control" name="title" type="text" placeholder="Título da postagem" aria-label="default input example">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="content" type="text" placeholder="Escreva sua postagem aqui" aria-label="default input example">
+                            </div>
+                            <button type="submit" name="save" class="btn btn-primary">Postar</button>
+                        </form>
+                    </div>
+                </div>
+                
+                &nbsp;
+
+                {% for %}
+
+                <div class="card">
+                    <div class="card-header">
+                        <a>@linhox</a>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Título do Post</h5>
+                        <p class="card-text texto-postagem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rhoncus luctus lectus, a varius nulla. Vivamus quis lacus nisi. Integer porttitor ipsum id enim facilisis aliquam. Nam sed massa rhoncus, iaculis felis aliquam, tempus enim.</p>
+                        <a href="#" class="btn btn-primary">Comentar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <a href="/GamingTrack/info">Detalhes da conta</a>
     <a href="/GamingTrack/criarNovaPostagem">Criar uma nova postagem</a>
     <a href="/GamingTrack/criarReviews">Criar uma nova review</a>
@@ -6,4 +106,14 @@
     <a href="/GamingTrack/listarPostagens">Ver postagens</a>
     <a href="/GamingTrack/listarReviews">Ver reviews</a>
     <a href="/GamingTrack/verPedidosdeAmizade">Pedidos de Amizade</a>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').trigger('focus')
+        })  
+    </script>
 </body>
+</html>
